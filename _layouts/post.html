@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="post">
+  <header>
+    {% include badge.html type=page.post_type %}
+    <h1>{{ page.title }}</h1>
+    {% include byline.html %}
+    {% if page.summary %}<p class="summary">{{ page.summary }}</p>{% endif %}
+    {% if page.series %}<p class="meta">Series: <a href="{{ '/series/' | append: page.series | append: '/' | relative_url }}">{{ page.series }}</a></p>{% endif %}
+  </header>
+
+  {% if page.post_type == "reference-guide" %}
+    {% include disclaimer.html %}
+  {% endif %}
+
+  {{ content }}
+
+  {% if page.tags %}
+  <footer class="post-tags">
+    Tags: {% for tag in page.tags %}<a class="tag" href="{{ '/tags/#' | append: tag | relative_url }}">{{ tag }}</a> {% endfor %}
+  </footer>
+  {% endif %}
+</article>

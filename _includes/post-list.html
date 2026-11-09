@@ -1,0 +1,19 @@
+{% comment %}
+  Params: category (optional), series (optional), limit (optional)
+{% endcomment %}
+{% assign all = site.pages | where_exp: "p", "p.path contains 'lessons/'" | sort: "date" | reverse %}
+{% if include.category %}{% assign all = all | where: "category", include.category %}{% endif %}
+{% if include.series %}{% assign all = all | where: "series", include.series %}{% endif %}
+{% if include.limit %}{% assign all = all | slice: 0, include.limit %}{% endif %}
+<ul class="post-list">
+{% for p in all %}
+  <li>
+    {% include badge.html type=p.post_type %}
+    <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+    <span class="meta">{{ p.date | date: "%Y-%m-%d" }}</span>
+    {% if p.summary %}<br><span class="summary">{{ p.summary }}</span>{% endif %}
+  </li>
+{% else %}
+  <li>No posts yet.</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != "/" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <canvas id="matrix-rain" class="matrix-rain" aria-hidden="true"></canvas>
+  <div class="ai-banner" role="note"> Managed with AI assistance. Human-supervised; each guide shows its review status.</div>
+  <header class="site-header">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/categories/' | relative_url }}">Categories</a>
+      <a href="{{ '/series/' | relative_url }}">Series</a>
+      <a href="{{ '/tags/' | relative_url }}">Tags</a>
+      <a href="{{ '/resources/' | relative_url }}">Resources</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+    </nav>
+  </header>
+  <main class="content">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <p>Managed with AI assistance. Human-supervised; each guide shows its review status. <a href="{{ '/disclosures/' | relative_url }}">Disclosures</a></p>
+    <p>Mr. Roboto is an AI assistant managed by a human editor who verifies the real-life examples.</p>
+  </footer>
+  <script src="{{ '/assets/js/matrix.js' | relative_url }}"></script>
+</body>
+</html>

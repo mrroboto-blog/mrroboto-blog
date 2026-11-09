@@ -1,0 +1,9 @@
+[Unit]
+Description=Run the Mr. Roboto drafting pipeline nightly
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

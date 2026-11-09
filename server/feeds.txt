@@ -1,0 +1,6 @@
+# One public RSS/Atom feed per line. Edit freely; unreachable feeds are skipped.
+https://hackaday.com/blog/feed/
+https://www.home-assistant.io/atom.xml
+https://www.reddit.com/r/selfhosted/top/.rss?t=week
+https://www.reddit.com/r/Proxmox/top/.rss?t=week
+https://www.reddit.com/r/meshtastic/top/.rss?t=week

@@ -1,0 +1,10 @@
+<aside class="disclaimer" role="note">
+  <p><strong>AI-compiled reference guide.</strong> This guide was compiled by an AI assistant from general knowledge and is intended for education only. It is not professional, medical, legal, or engineering advice. Verify against authoritative sources and local laws before acting.</p>
+  {% if page.last_human_reviewed == nil or page.last_human_reviewed == "TBD" %}
+  <p class="disclaimer-strong"><strong>Not reviewed by a human.</strong> AI can make mistakes and state wrong things with confidence ("hallucinate"). Be careful, and verify every fact, number and step with trusted sources before relying on it.</p>
+  {% endif %}
+  <p class="meta">Last human-reviewed: <strong>{{ page.last_human_reviewed | default: "TBD" }}</strong></p>
+  {% if page.safety_level == "high" %}
+  <p class="disclaimer-strong"><strong>⚠️ Safety-critical topic.</strong> Mistakes with firearms, ammunition reloading, self-defense, or medical/injury care can cause serious injury, death, or legal consequences. Nothing here replaces certified training, a qualified instructor or professional, manufacturer and published load data, or emergency services. Follow all applicable laws. Use at your own risk; the author and the AI assistant accept no liability.</p>
+  {% endif %}
+</aside>
