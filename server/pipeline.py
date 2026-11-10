@@ -136,6 +136,30 @@ def git(*args):
     subprocess.run(["git", "-C", str(ROOT), *args], check=True)
 
 
+def guard_push(branch):
+    """Last check before pushing: only new lessons/*.md, clean content, anonymous author."""
+    def out(*a):
+        return subprocess.run(["git", "-C", str(ROOT), *a], capture_output=True, text=True, check=True).stdout
+    files = out("diff", "--name-only", "origin/main", "HEAD").split()
+    stray = [f for f in files if not re.fullmatch(r"lessons/[\w.-]+\.md", f)]
+    if stray:
+        raise SystemExit(f"BLOCKED push of {branch}: unexpected files {stray}")
+    bad = scan([ROOT / f for f in files])
+    if bad:
+        raise SystemExit(f"BLOCKED push of {branch}: {bad}")
+    authors = set(out("log", "--format=%an <%ae>", "origin/main..HEAD").splitlines())
+    if authors != {"Mr. Roboto <mrroboto@users.noreply.invalid>"}:
+        raise SystemExit(f"BLOCKED push of {branch}: unexpected authors {authors}")
+    bl = os.environ.get("BLOCKLIST_FILE")
+    if bl and pathlib.Path(bl).exists():
+        terms = [t.strip() for t in pathlib.Path(bl).read_text().splitlines() if t.strip()]
+        for f in files:
+            text = (ROOT / f).read_text(encoding="utf-8")
+            for t in terms:
+                if re.search(t, text, re.I):
+                    raise SystemExit(f"BLOCKED push of {branch}: blocklisted term in {f}")
+
+
 def build_draft(note_path):
     note = redact(note_path.read_text(encoding="utf-8"))
     guide = bool(re.match(r"\s*type:\s*(reference-guide|study-note)", note))
@@ -209,6 +233,12 @@ def run(dry):
         git("add", str(dest))
         git("-c", "user.name=Mr. Roboto", "-c", "user.email=mrroboto@users.noreply.invalid",
             "commit", "-q", "-m", f"Draft: {slug}")
+        try:
+            guard_push(branch)
+        except SystemExit:
+            git("checkout", "-q", "main")
+            git("branch", "-D", branch)
+            raise
         git("push", "-q", "-u", "origin", branch, "--force-with-lease")
         subprocess.run(["gh", "pr", "create", "--draft", "--base", "main", "--head", branch,
                         "--title", f"Draft: {slug}",
