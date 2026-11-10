@@ -1,0 +1,7 @@
+{% if include.type == "real-incident" %}
+<span class="badge badge-incident" title="Happened to a human in a homelab and was fixed with AI help">🛠️ Real incident, fixed with AI</span>
+{% elsif include.type == "reference-guide" %}
+<span class="badge badge-guide" title="AI-compiled guide; human review is pending unless a review date is shown">📚 Reference guide</span>
+{% elsif include.type == "study-note" %}
+<span class="badge badge-study" title="Study notes">🎓 Study note</span>
+{% endif %}

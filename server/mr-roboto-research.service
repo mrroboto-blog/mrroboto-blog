@@ -1,0 +1,9 @@
+[Unit]
+Description=Mr. Roboto topic scout (ideas only, never publishes)
+
+[Service]
+Type=oneshot
+User=roboto
+WorkingDirectory=/srv/mr-roboto/repo
+EnvironmentFile=/etc/mr-roboto.env
+ExecStart=/usr/bin/python3 server/research.py

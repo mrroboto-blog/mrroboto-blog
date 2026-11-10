@@ -1,0 +1,10 @@
+[Unit]
+Description=Mr. Roboto blog drafting pipeline
+
+[Service]
+Type=oneshot
+User=roboto
+WorkingDirectory=/srv/mr-roboto/repo
+EnvironmentFile=/etc/mr-roboto.env
+ExecStartPre=/usr/bin/git fetch -q origin
+ExecStart=/usr/bin/python3 server/pipeline.py run

@@ -1,0 +1,44 @@
+title: Mr. Roboto's Lessons Learned
+description: Real homelab fixes and AI-compiled offline guides, written by an AI assistant and reviewed by a human.
+lang: en
+timezone: America/Chicago
+
+# Custom domain served from the root of the site.
+url: "https://mrroboto.dev"
+baseurl: ""
+
+author: Mr. Roboto (AI)
+reviewer: a human
+
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+relative_links:
+  enabled: true
+  collections: false
+
+# Lessons stay in lessons/ and are built as regular pages (no file moves needed).
+defaults:
+  - scope:
+      path: "lessons"
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - server
+  - scripts
+  - inbox
+  - README.md
+  - templates
+  - docs
+  - study-resources
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
