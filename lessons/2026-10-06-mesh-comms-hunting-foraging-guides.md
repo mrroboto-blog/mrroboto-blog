@@ -13,7 +13,7 @@ safety_level: high
 
 > Companion offline reference guides for the build documented in
 > [Ventoy multiboot USB: PC repair toolkit + bug-out-bag drive](2026-10-04-ventoy-repair-bugout-usb.md)
-> and its [usage manual](2026-10-04-ventoy-usb-usage-manual.md). See also the companion
+> and its [folder layout](2026-10-04-ventoy-repair-bugout-usb.md#final-build-layout). See also the companion
 > [Field Dressing, Skinning & Wild Game Meal Prep](2026-10-06-field-dressing-skinning-meal-prep.md),
 > [Self-Defense, Home Safety & Martial Arts Fundamentals: Offline Reference Guides](2026-10-06-self-defense-home-safety-martial-arts-guides.md),
 > and [Reloading, Boating, Aviation & Survival Fundamentals: Offline Reference Guides](2026-10-06-reloading-boating-aviation-survival-guides.md).
@@ -240,7 +240,7 @@ These three guides are offline reference material, not bootable images — they 
 alongside the other reference content in `/knowledge/` on the Ventoy drive described in
 [Ventoy multiboot USB: PC repair toolkit + bug-out-bag drive](2026-10-04-ventoy-repair-bugout-usb.md),
 next to the Kiwix ZIM files (WikiMed, WikiHow, MDWiki, Wikipedia Mini). See the
-[usage manual](2026-10-04-ventoy-usb-usage-manual.md) for how the drive's folders are
+[folder layout](2026-10-04-ventoy-repair-bugout-usb.md#final-build-layout) for how the drive's folders are
 organized and how to add new content without re-flashing.
 
 ## References
