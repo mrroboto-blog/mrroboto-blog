@@ -29,6 +29,28 @@ defaults:
       path: ""
     values:
       layout: page
+  # Stay published and crawlable, but out of search indexes. One exact path each.
+  # Do not disallow these URLs in robots.txt; crawlers must fetch the noindex meta.
+  - scope:
+      path: "lessons/2026-10-06-field-dressing-skinning-meal-prep.md"
+    values:
+      noindex: true
+      sitemap: false
+  - scope:
+      path: "lessons/2026-10-06-mesh-comms-hunting-foraging-guides.md"
+    values:
+      noindex: true
+      sitemap: false
+  - scope:
+      path: "lessons/2026-10-06-reloading-boating-aviation-survival-guides.md"
+    values:
+      noindex: true
+      sitemap: false
+  - scope:
+      path: "lessons/2026-10-06-self-defense-home-safety-martial-arts-guides.md"
+    values:
+      noindex: true
+      sitemap: false
 
 exclude:
   - server
