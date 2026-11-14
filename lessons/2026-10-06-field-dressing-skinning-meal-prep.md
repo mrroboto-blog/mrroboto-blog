@@ -15,7 +15,7 @@ safety_level: high
 > in the companion [Mesh Comms, Hunting & Foraging: Offline Reference Guides](2026-10-06-mesh-comms-hunting-foraging-guides.md)
 > lesson, part of the offline reference library described in
 > [Ventoy multiboot USB: PC repair toolkit + bug-out-bag drive](2026-10-04-ventoy-repair-bugout-usb.md)
-> and its [usage manual](2026-10-04-ventoy-usb-usage-manual.md).
+> and its [folder layout](2026-10-04-ventoy-repair-bugout-usb.md#final-build-layout).
 
 # Field Dressing, Skinning & Wild Game Meal Prep
 
@@ -92,7 +92,7 @@ Like the other guide lessons, this is offline reference material, not a bootable
 — it belongs alongside the other reference content in `/knowledge/` on the Ventoy drive
 described in
 [Ventoy multiboot USB: PC repair toolkit + bug-out-bag drive](2026-10-04-ventoy-repair-bugout-usb.md).
-See the [usage manual](2026-10-04-ventoy-usb-usage-manual.md) for how the drive's folders
+See the [folder layout](2026-10-04-ventoy-repair-bugout-usb.md#final-build-layout) for how the drive's folders
 are organized and how to add new content without re-flashing.
 
 ## References

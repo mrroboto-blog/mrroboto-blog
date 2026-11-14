@@ -13,7 +13,7 @@ safety_level: high
 
 > Companion offline reference guides for the build documented in
 > [Ventoy multiboot USB: PC repair toolkit + bug-out-bag drive](2026-10-04-ventoy-repair-bugout-usb.md)
-> and its [usage manual](2026-10-04-ventoy-usb-usage-manual.md). See also the companion
+> and its [folder layout](2026-10-04-ventoy-repair-bugout-usb.md#final-build-layout). See also the companion
 > [Mesh Comms, Hunting & Foraging: Offline Reference Guides](2026-10-06-mesh-comms-hunting-foraging-guides.md),
 > [Field Dressing, Skinning & Wild Game Meal Prep](2026-10-06-field-dressing-skinning-meal-prep.md),
 > and [Reloading, Boating, Aviation & Survival Fundamentals: Offline Reference Guides](2026-10-06-reloading-boating-aviation-survival-guides.md).
@@ -218,7 +218,7 @@ Like the mesh/hunting/foraging guides, these three are offline reference materia
 bootable images — they belong alongside the other reference content in `/knowledge/` on
 the Ventoy drive described in
 [Ventoy multiboot USB: PC repair toolkit + bug-out-bag drive](2026-10-04-ventoy-repair-bugout-usb.md).
-See the [usage manual](2026-10-04-ventoy-usb-usage-manual.md) for how the drive's folders
+See the [folder layout](2026-10-04-ventoy-repair-bugout-usb.md#final-build-layout) for how the drive's folders
 are organized and how to add new content without re-flashing.
 
 ## References
